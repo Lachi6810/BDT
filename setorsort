@@ -1,0 +1,18 @@
+union
+student1 = LOAD 'student1_data.txt' using PigStorage(',') as (studentid:int, 
+studentname:chararray,percentage:int)
+student2 = LOAD 'student2_data.txt' using PigStorage(',') as (studentid:int, 
+studentname:chararray,percentage:int)
+grunt> student = UNION student1, student2;
+grunt> DUMP student
+
+set 
+
+grunt> cust_realation1 = load '/home/cloudera/customers.txt' using 
+PigStorage(',')as (id:int, name:chararray, age:int, address:chararray, salary:int);
+grunt> cust_realation2 = load '/home/cloudera/customers.txt' using 
+PigStorage(',')as (id:int, name:chararray, age:int, address:chararray, salary:int);
+grunt> customers3 = JOIN cust_relation1 BY id, cust_relation2 BY id;
+
+grunt> DUMP grpByCatTotals
+sortGrpByCatTotals = ORDER grpByCatTotals BY group DESC;
