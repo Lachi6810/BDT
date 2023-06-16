@@ -1,0 +1,11 @@
+gprec_data = LOAD 'gprec.txt' using PigStorage(',') as (branchid:int, 
+branch:chararray,strength:int)
+Assuming gprec.txt contains data
+4. DUMP gprec_data;
+5. DESCRIBE gprec_data;
+6. foreach_opr = FOREACH gprec_data GENERATE branch,strength;
+7. DUMP foreach_opr;
+8. foreach_opr2 = FOREACH gprec_data GENERATE lower(branch);
+DUMP foreach_opr2;
+9. orderby_opr = ORDER gprec_data BY strength DESC;
+10. DUMP orderby_opr;
