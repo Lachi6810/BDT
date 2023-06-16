@@ -1,0 +1,14 @@
+hive> CREATE TABLE Employee (empid INT, empname STRING, empcity STRING);
+hive> describe Employee;
+hive> insert into Employee values (200,’Sreedhar’,’Kurnool’);
+hive> select * from Employee;
+
+Alter Table statement is used to alter a table in Hive.
+hive> ALTER TABLE Employee RENAME to GPREmployee
+hive> desc GPREmployee;
+hive> ALTER TABLE GPREmployee ADD COLUMNS (Sal BIGINT);
+
+
+DROP TABLE removes the table in Hive
+hive> DROP TABLE GPREmployee;
+hive> desc GPREmployee
