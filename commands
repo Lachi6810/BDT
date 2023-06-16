@@ -1,0 +1,15 @@
+hadoop fs -mv /user/hadoop/file1 /user/hadoop/file2
+hadoop version
+hadoop fs -ls /
+hadoop fs -mkdir /user/hadoop/
+hadoop fs -put sample.txt /user/data/
+hadoop fs -get /user/data/sample.txt workspace/
+hadoop fs -cat /user/data/sampletext.txt
+hadoop fs -cp /user/hadoop/file1 /user/hadoop/file2
+hadoop fs -appendToFile localfile /user/hadoop/hadoopfile
+hadoop dfs -df /user/hadoop/dir1
+hadoop fs –help
+hadoop -touchz pathname
+hadoop fs -rmdir /user/hadoop/emptydir
+hadoop fs -mv /user/hadoop/file1
+/user/hadoop/file2
