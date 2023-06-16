@@ -51,3 +51,12 @@ FileOutputFormat.setOutputPath(job, new Path(args[1]));
 System.exit(job.waitForCompletion(true) ? 0 : 1);
 }
 }
+Open Terminal 
+ cat > /home/cloudera/inputFile.txt
+--Enter words
+ hdfs dfs -mkdir /inputnew
+hdfs dfs -put /home/cloudera/inputFile.txt /inputnew/
+hdfs dfs -cat /inputnew/inputFile.txt 
+ hadoop jar /home/cloudera/wordcount.jar WordCount 
+/inputnew/inputFile.txt /output_new
+ hdfs dfs -cat /output_new/part-r-00000
