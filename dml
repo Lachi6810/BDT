@@ -1,0 +1,11 @@
+SET hive.support.concurrency=true;
+SET hive.txn.manager=org.apache.hadoop.hive.ql.lockmgr.DbTxnManager;
+CREATE TABLE student_table (rollno int, name string,cgpa float)
+CLUSTERED BY(rollno) INTO 3 BUCKETS
+STORED AS ORC TBLPROPERTIES ('transactional'='true');
+INSERT INTO student_table partition (admission_date='2020-04-01')
+VALUES (120, 'sreedhar',9.8);
+INSERT INTO student_table partition (admission_date='2020-04-02')
+VALUES (121, 'sree',9.6);
+update student_table set cgpa=10 where rollno = 123;
+DELETE FROM student_table WHERE rollno = 123;
