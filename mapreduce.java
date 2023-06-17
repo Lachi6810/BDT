@@ -60,3 +60,4 @@ hdfs dfs -cat /inputnew/inputFile.txt
  hadoop jar /home/cloudera/wordcount.jar WordCount 
 /inputnew/inputFile.txt /output_new
  hdfs dfs -cat /output_new/part-r-00000
+gutenburg link :https://www.gutenberg.org/cache/epub/4300/pg4300.txt
